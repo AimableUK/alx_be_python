@@ -13,7 +13,7 @@ match priority:
         message = f"Reminder: '{task}' has an unknown priority"
 
 # Add time sensitivity
-if time_bound.lower() == "yes":
+if time_bound == "yes":
     message += " that requires immediate attention today!"
 else:
     message += ". Consider completing it when you have free time."
