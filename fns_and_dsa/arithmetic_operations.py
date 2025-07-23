@@ -8,5 +8,7 @@ def perform_operation(num1, num2, operation):
     elif operation == "divide":
         if num2 == 0:
             return "Can't Divide with Zero"
+        else:
+            return num1 / num2
     else:
         return "Invalid Operation"
