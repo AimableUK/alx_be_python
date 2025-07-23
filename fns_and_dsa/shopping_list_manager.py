@@ -17,14 +17,15 @@ def main():
             shopping_list.append(item)
 
         elif choice == '2':
-            item = input("Enter Item name to delete: ")
-            for i in range(len(shopping_list)):
-                if item == shopping_list[i]:
-                    shopping_list.remove(item)
-                    print("Item Deleted Successfully!!")
-            else:
-                print("Item Not Found.")
+            item = input("Enter item name to delete: ").lower()
+            lowercase_list = [x.lower() for x in shopping_list]
 
+            if item in lowercase_list:
+                index = lowercase_list.index(item)
+                removed_item = shopping_list.pop(index)
+                print(f"'{removed_item}' deleted successfully!")
+            else:
+                print("Item not found.")
 
         elif choice == '3':
             print(shopping_list)
