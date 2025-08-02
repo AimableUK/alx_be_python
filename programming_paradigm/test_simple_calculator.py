@@ -1,0 +1,32 @@
+import unittest
+from simple_calculator import SimpleCalculator
+
+
+class TestSimpleCalculator(unittest.TestCase):
+
+    def setUp(self):
+        """Set up the SimpleCalculator instance before each test."""
+        self.calc = SimpleCalculator()
+
+    def test_addition(self):
+        """Test the addition method."""
+        self.assertEqual(self.calc.add(2, 3), 5)
+        self.assertEqual(self.calc.add(-1, 1), 0)
+
+    def test_subtraction(self):
+        """Test the substraction method"""
+        self.assertEqual(self.calc.subtract(20, 7), 13)
+        self.assertEqual(self.calc.subtract(3, -4), 7)
+
+    def test_multiply(self):
+        """Test the multiply method"""
+        self.assertEqual(self.calc.multiply(3, 4), 12)
+        self.assertEqual(self.calc.multiply(12, -3), -36)
+
+    def test_divide(self):
+        """Test the divide method"""
+        self.assertEqual(self.calc.divide(6, 3), 2)
+        self.assertEqual(self.calc.divide(3, 6), 0.5)
+        self.assertEqual(self.calc.divide(6, 0), None)
+
+# Remember to write additional test methods for subtract, multiply, and divide.
